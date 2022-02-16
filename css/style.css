@@ -1,46 +1,192 @@
 body {
   margin: 0;
   overflow: hidden;
-  background: #ad8762;
+  background: #ffe9d4;;
+}
+
+header div:first-of-type {
+  width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header h1 {
+  animation: fontChange 5s infinite;
+}
+
+@keyframes fontChange {
+  0% {
+    font-family: 'Courier New', Courier, monospace;
+    transform: scale(0);
+  }
+
+  10% {
+    font-family: 'Courier New', Courier, monospace;
+    transform: scale(1);
+  }
+
+  35% {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  55% {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  75% {
+    font-family: 'Times New Roman', Times, serif;
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(800);
+  }
+}
+
+ img {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  width: 60%;
+}
+
+/* Mario image */
+ div img:last-of-type {
+  transition: 4s;
+  width: 100%;
+  z-index: 1;
+  /* animation: marioLooptAnimatie 1s infinite; */
+}
+
+/* Mario div */
+.marioDraai {
+  /* animation: marioLooptPad 10s infinite; */
+  position: absolute;
+  z-index: 15;
+  width: 15%;
+  height: auto;
+  bottom: 2vh;
+  right: 12vw;
+}
+
+/* transform: translate(-135%, -39%) scale(.6) rotateY(0deg) rotate(5deg); */
+
+@keyframes marioLooptAnimatie {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes marioLooptPad {
+  0% {
+    transform: translate(1vw, 35vh) scale(1.5) rotateY(0deg);
+  }
+
+  35% {
+    transform: translate(-36vw, -20vh) scale(0.5) rotateY(0deg);
+  }
+
+  40% {
+    transform: translate(-36vw, -20vh) scale(0.5) rotateY(180deg);
+  }
+
+  65% {
+    transform: translate(-10vw, -20vh) scale(0.5) rotateY(180deg);
+  }
+
+  70% {
+    transform: translate(-10vw, -20vh) scale(0.5) rotateY(0deg);
+  }
+
+  100% {
+    transform: translate(1vw, 35vh) scale(1.5) rotateY(0deg);
+  }
 }
 
 .scene {
   perspective: 25vh;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-
-.scene div {
-  width: 15em;
+  width: 100vw;
   height: 100vh;
-  position: absolute;
-  background: #ad8762;
-  box-shadow: 0px 0px 200px 4px black inset, 0px 0px 200px -20px black;
-}
-
-.scene div:first-of-type {
-  transform: rotateY(45deg);
+  transform-style: preserve-3d;
+  position: fixed;
   top: 0;
   left: 0;
 }
 
-.scene div:nth-of-type(2) {
-  transform: rotateX(-45deg);
+main noscript div:first-of-type {
   width: 100vw;
-  height: 15em;
-  top: 0;
+height: 100vh;
+background: #ad8762;
+position: fixed;
+top: 0;
 }
 
-.scene div:nth-of-type(3) {
-  transform: rotateX(45deg);
-  width: 100vw;
-  height: 15em;
+.scene div {
+  background: #ad8762;
+  box-shadow: 0px 0px 200px 4px black inset, 0px 0px 200px -20px black;
+}
+
+/* Doos zeide Links */
+.scene div:first-of-type {
+  position: absolute;
+  height: 100vh;
+  width: 21em;
+  background: #ad8762;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  top: 0;
+  left: 0;
+}
+
+/* Doos zeide Top */
+.scene div:nth-of-type(2) {
+  position: absolute;
+  height: 21em;
+  width: 101vw;
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
   bottom: 0;
 }
 
+/* Doos zeide Bottom */
+.scene div:nth-of-type(3) {
+  position: absolute;
+  height: 21em;
+  width: 101vw;
+  transform-origin: center top;
+  transform: rotateX(-90deg);
+  top: 0;
+}
+
+/* Doos zeide Back */
+.scene div:nth-of-type(4) {
+  position: absolute;
+  height: 101vh;
+  width: 100vw;
+  transform-origin: center center;
+  transform: translateZ(-20em);
+  top: 0;
+}
+
+/* Doos zeide Right */
 .scene div:last-of-type {
-  transform: rotateY(-45deg);
+  position: absolute;
+  height: 101vh;
+  width: 21em;
+  transform-origin: right center;
+  transform: rotateY(-90deg);
   top: 0;
   right: 0;
 }
