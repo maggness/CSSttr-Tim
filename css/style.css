@@ -1,17 +1,28 @@
+/*
+Speciaal font voor DVD
+Bron: https://www.pagecloud.com/blog/how-to-add-custom-fonts-to-any-website */
+@font-face {
+  font-family: "digitalsymbolsregular";
+  src: url("../fonts/dvd-webfont.woff2") format("woff2"),
+    url("../fonts/dvd-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   overflow: hidden;
-  background: #ffe9d4;;
+  background: #ffe9d4;
 }
 
 header div:first-of-type {
   width: 100%;
-    height: 100%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
 }
 
 header h1 {
@@ -20,25 +31,26 @@ header h1 {
 
 @keyframes fontChange {
   0% {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     transform: scale(0);
   }
 
   10% {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     transform: scale(1);
   }
 
   35% {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 
   55% {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
   }
 
   75% {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     transform: scale(1);
   }
 
@@ -47,7 +59,144 @@ header h1 {
   }
 }
 
- img {
+.boompietest {
+  position: fixed;
+  z-index: 100;
+  bottom: 10%;
+  left: 14%;
+  width: 35%;
+}
+
+.test {
+  --vuurwerkPijlPositieLeft:20%;
+  --vuurwerkPijlPositieBottom:13%;
+  --vuurwerkPijlzIndex:11;
+  --vuurwerkPijlColor:black;
+  --vuurwerkPijlAnimatie:2s;
+}
+
+.test2 {
+  --vuurwerkPijlPositieLeft:32%;
+  --vuurwerkPijlPositieBottom:13%;
+  --vuurwerkPijlzIndex:10;
+  --vuurwerkPijlColor:gray;
+  --vuurwerkPijlAnimatie:3s;
+}
+
+.test3 {
+  --vuurwerkPijlPositieLeft:40%;
+  --vuurwerkPijlPositieBottom:13%;
+  --vuurwerkPijlzIndex:12;
+  --vuurwerkPijlColor:black;
+  --vuurwerkPijlAnimatie:2.5s;
+}
+
+.vuurwerk {
+  padding: 0;
+  margin: 0;
+  height: .4em;
+  width: .4em;
+  position: fixed;
+  list-style: none;
+  transform-origin: bottom;
+  bottom: var(--vuurwerkPijlPositieBottom);
+  left: var(--vuurwerkPijlPositieLeft);
+  z-index: var(--vuurwerkPijlzIndex);
+  background-color: var(--vuurwerkPijlColor);
+  animation: vuurwerkPad var(--vuurwerkPijlAnimatie) forwards ease-in;
+}
+
+.test li {
+  --ColorFirework:blue;
+}
+
+.test2 li {
+  --ColorFirework:green;
+}
+
+.test3 li {
+  --ColorFirework:red;
+}
+
+.vuurwerk li {
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  background: var(--ColorFirework);
+  border-radius: 50%;
+  animation: vuurwerkBoem 0.5s forwards;
+  animation-delay: var(--vuurwerkPijlAnimatie);
+  transform: scale(0);
+  /* animation-play-state: paused; */
+}
+
+.vuurwerk li:first-of-type {
+  --upDown: 10em;
+  --leftRight: 10em;
+}
+
+.vuurwerk li:nth-of-type(2) {
+  --upDown: -10em;
+  --leftRight: 10em;
+}
+
+.vuurwerk li:nth-of-type(3) {
+  --upDown: -10em;
+  --leftRight: -10em;
+}
+
+.vuurwerk li:nth-of-type(4) {
+  --upDown: 10em;
+  --leftRight: -10em;
+}
+
+.vuurwerk li:nth-of-type(5) {
+  --upDown: 0em;
+  --leftRight: 10em;
+}
+
+.vuurwerk li:nth-of-type(6) {
+  --upDown: 10em;
+  --leftRight: 0em;
+}
+
+.vuurwerk li:nth-of-type(7) {
+  --upDown: 0em;
+  --leftRight: -10em;
+}
+
+.vuurwerk li:last-of-type {
+  --upDown: -10em;
+  --leftRight: 0em;
+}
+
+@keyframes vuurwerkBoem {
+  0% {
+    transform: translate(0em, 0em) scale(1);
+  }
+
+  100% {
+    transform: translate(var(--leftRight), var(--upDown));
+    opacity: 0;
+  }
+}
+
+@keyframes vuurwerkPad {
+  0% {
+  }
+
+  99% {
+    background-color: black;
+  }
+
+  100% {
+    transform: translate(4em, -28em) rotateX(30deg) rotateY(17deg)
+      rotateZ(11deg) scale(0.6);
+    background-color: transparent;
+  }
+}
+
+img {
   position: absolute;
   z-index: 10;
   bottom: 0;
@@ -55,7 +204,7 @@ header h1 {
 }
 
 /* Mario image */
- div img:last-of-type {
+div img:last-of-type {
   transition: 4s;
   width: 100%;
   z-index: 1;
@@ -127,10 +276,10 @@ header h1 {
 
 main noscript div:first-of-type {
   width: 100vw;
-height: 100vh;
-background: #ad8762;
-position: fixed;
-top: 0;
+  height: 100vh;
+  background: #ad8762;
+  position: fixed;
+  top: 0;
 }
 
 .scene div {
