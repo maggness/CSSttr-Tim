@@ -17,6 +17,9 @@ Dan via `transform-origin: center bottom;` & `transform: rotateX(90deg);` op de 
 
 Ook ben ik met `@keyframes` gaan spelen voor het grote mannen vuurwerk. Ik wil hier animaties achter elkaar laten spelen om zo een wat complexere show op te zetten. Hier ga ik later ook interactie aan toevoegen.
 
+![V1 BOX](https://user-images.githubusercontent.com/30145681/156364272-d9c6b363-339c-4295-b7d0-ccd544c56289.png)
+
+
 ### Idee week 2
 
 Ik ga 3 vuurwerk pijlen maken met css variabelen om hiermee te experimenteren. Ik heb een soort template gemaakt voor elke pijl, waar ik alleen de translated verander per pijl.
