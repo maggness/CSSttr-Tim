@@ -150,6 +150,7 @@ main div:first-of-type {
   position: fixed;
   list-style: none;
   transform-origin: bottom;
+  /* bottom: var(--vuurwerkPijlPositieBottom, 10%); preset 2e */
   bottom: var(--vuurwerkPijlPositieBottom);
   left: var(--vuurwerkPijlPositieLeft);
   z-index: var(--vuurwerkPijlzIndex);
@@ -243,6 +244,8 @@ main div:first-of-type {
   0% {
     transform: translate(0em, 0em) scale(1);
   }
+
+/* unitless var, calc met * unit */
 
   100% {
     transform: translate(var(--leftRight), var(--upDown));
