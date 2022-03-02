@@ -85,7 +85,7 @@ main div:first-of-type {
 }
 
 /* Doos zeide Links */
-.scene div:first-of-type {
+/* .scene div:first-of-type {
   position: absolute;
   height: 100vh;
   width: 21em;
@@ -94,10 +94,10 @@ main div:first-of-type {
   transform: rotateY(90deg);
   top: 0;
   left: 0;
-}
+} */
 
-/* Doos zeide Top */
-.scene div:nth-of-type(2) {
+/* Doos zeide Bottom */
+.scene div {
   position: absolute;
   height: 21em;
   width: 101vw;
@@ -107,17 +107,27 @@ main div:first-of-type {
 }
 
 /* Doos zeide Bottom */
-.scene div:nth-of-type(3) {
+/* .scene div:nth-of-type(2) {
+  position: absolute;
+  height: 21em;
+  width: 101vw;
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+  bottom: 0;
+} */
+
+/* Doos zeide Top */
+/* .scene div:nth-of-type(3) {
   position: absolute;
   height: 21em;
   width: 101vw;
   transform-origin: center top;
   transform: rotateX(-90deg);
   top: 0;
-}
+} */
 
 /* Doos zeide Back */
-.scene div:nth-of-type(4) {
+/* .scene div:nth-of-type(4) {
   position: absolute;
   height: 101vh;
   width: 100vw;
@@ -128,10 +138,10 @@ main div:first-of-type {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0em 21em;
-}
+} */
 
 /* Doos zeide Right */
-.scene div:last-of-type {
+/* .scene div:last-of-type {
   position: absolute;
   height: 101vh;
   width: 21em;
@@ -139,7 +149,7 @@ main div:first-of-type {
   transform: rotateY(-90deg);
   top: 0;
   right: 0;
-}
+} */
 
 /* Firework arrow template */
 .vuurwerkContainer ul {
@@ -271,8 +281,8 @@ main div:first-of-type {
 /* Nuke code  */
 
 main .atomBombContainer {
-  --NukeTimer: 0s;
-  --NukeTimerDelay: 0s;
+  --NukeTimer: s;
+  --NukeTimerDelay: s;
 
   width: 25em;
   height: 25em;
