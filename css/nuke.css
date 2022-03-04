@@ -244,6 +244,24 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
   animation-play-state: paused;
 }
 
+.atomBombContainer div > input:last-of-type {
+  display: block;
+  position: fixed;
+  width: 7vw;
+  bottom: 22.5vh;
+  right: 17vw;
+  background: none;
+  border: none;
+  z-index: 1000;
+  text-align: center;
+  cursor: text;
+  font-size: 1em;
+}
+
+.atomBombContainer div > input:last-of-type:focus {
+  outline: none;
+}
+
  /* Shake voor de body tijdens de atoombom  */
  @keyframes shakeNuke {
   10%,
