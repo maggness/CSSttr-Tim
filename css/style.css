@@ -95,34 +95,56 @@ header h1 {
 
 /* Cloud */
 .scene {
-  --cloudSize: .5;
+  /* Hoe groter hoe sneller */
+  --cloudSize: ;
+  --cloudPathTime: ;
+  --cloudPathDelay: ;
+  --cloudTopHeight: ;
 } 
 
-.scene > div:last-of-type div:first-of-type {
-  --cloudSize: .3;
+.scene > div:last-of-type > div {
   width: 16vh;
-  top: 60vh;
+  top: var(--cloudTopHeight);
   position: fixed;
   height: 6vh;
   background: #ECEFF1;
   box-shadow: 5px 5px rgb(0 0 0 / 20%);
   border-radius: 100px;
   transform: translateX(-15vw) scale(var(--cloudSize));
-  animation: cloudPath 20s infinite linear;
+  animation: cloudPath var(--cloudPathTime) infinite linear;
+  animation-delay: var(--cloudPathDelay);
+}
+
+.scene > div:last-of-type div:first-of-type {
+  /* Bigger cloud, shorter timer */
+  --cloudSize: .3;
+  --cloudPathTime: 30s;
+  --cloudPathDelay: -10s;
+  --cloudTopHeight: 60vh;
+}
+
+.scene > div:last-of-type div:nth-of-type(2) {
+  /* Bigger cloud, shorter timer */
+  --cloudSize: .4;
+  --cloudPathTime: 25s;
+  --cloudPathDelay: -20s;
+  --cloudTopHeight: 66vh;
+}
+
+.scene > div:last-of-type div:nth-of-type(3) {
+  /* Bigger cloud, shorter timer */
+  --cloudSize: .4;
+  --cloudPathTime: 25s;
+  --cloudPathDelay: -6s;
+  --cloudTopHeight: 55vh;
 }
 
 .scene > div:last-of-type div:last-of-type {
+  /* Bigger cloud, shorter timer */
   --cloudSize: .2;
-  width: 16vh;
-  top: 65vh;
-  position: fixed;
-  height: 6vh;
-  background: #ECEFF1;
-  box-shadow: 5px 5px rgb(0 0 0 / 20%);
-  border-radius: 100px;
-  transform: translateX(-15vw) scale(var(--cloudSize));
-  animation: cloudPath 25s infinite linear;
-  animation-delay: -15s;
+  --cloudPathTime: 35s;
+  --cloudPathDelay: -23s;
+  --cloudTopHeight: 65vh;
 }
 
 .scene > div:last-of-type div::after, .scene > div:last-of-type div::before{
