@@ -1,0 +1,132 @@
+/* Firework arrow template */
+.vuurwerkContainer ul {
+    padding: 0;
+    margin: 0;
+    height: 0.4em;
+    width: 0.4em;
+    position: fixed;
+    list-style: none;
+    transform-origin: bottom;
+    bottom: var(--vuurwerkPijlPositieBottom);
+    left: var(--vuurwerkPijlPositieLeft);
+    z-index: var(--vuurwerkPijlzIndex);
+    background-color: var(--vuurwerkPijlColor);
+    animation: vuurwerkPad var(--vuurwerkPijlAnimatie) forwards ease-in;
+    animation-play-state: paused;
+    transform: scale(0);
+  }
+  
+  /* Firework arrow variations */
+  .vuurwerkContainer ul:first-of-type {
+    --vuurwerkPijlPositieLeft: 20%;
+    --vuurwerkPijlPositieBottom: 13%;
+    --vuurwerkPijlzIndex: 11;
+    --vuurwerkPijlColor: black;
+    --vuurwerkPijlAnimatie: 2s;
+    --ColorFirework: blue;
+  }
+  
+  .vuurwerkContainer ul:nth-of-type(2) {
+    --vuurwerkPijlPositieLeft: 32%;
+    --vuurwerkPijlPositieBottom: 13%;
+    --vuurwerkPijlzIndex: 10;
+    --vuurwerkPijlColor: gray;
+    --vuurwerkPijlAnimatie: 3s;
+    --ColorFirework: green;
+  }
+  
+  .vuurwerkContainer ul:last-of-type {
+    --vuurwerkPijlPositieLeft: 40%;
+    --vuurwerkPijlPositieBottom: 13%;
+    --vuurwerkPijlzIndex: 12;
+    --vuurwerkPijlColor: black;
+    --vuurwerkPijlAnimatie: 2.5s;
+    --ColorFirework: red;
+  }
+  
+  .vuurwerkContainer input:checked ~ ul, .vuurwerkContainer input:checked ~ ul li  {
+    animation-play-state: running;
+  }
+  
+  /* Firework expotion template  */
+  .vuurwerkContainer ul li {
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    background: var(--ColorFirework);
+    border-radius: 50%;
+    animation: vuurwerkBoem 0.5s forwards;
+    animation-delay: var(--vuurwerkPijlAnimatie);
+    transform: scale(0);
+    animation-play-state: paused;
+  }
+  
+  /* Firework explotion expandtion */
+  .vuurwerkContainer ul li:first-of-type {
+    --upDown: 10em;
+    --leftRight: 10em;
+  }
+  
+  .vuurwerkContainer ul li:nth-of-type(2) {
+    --upDown: -10em;
+    --leftRight: 10em;
+  }
+  
+  .vuurwerkContainer ul li:nth-of-type(3) {
+    --upDown: -10em;
+    --leftRight: -10em;
+  }
+  
+  .vuurwerkContainer ul li:nth-of-type(4) {
+    --upDown: 10em;
+    --leftRight: -10em;
+  }
+  
+  .vuurwerkContainer ul li:nth-of-type(5) {
+    --upDown: 0em;
+    --leftRight: 10em;
+  }
+  
+  .vuurwerkContainer ul li:nth-of-type(6) {
+    --upDown: 10em;
+    --leftRight: 0em;
+  }
+  
+  .vuurwerkContainer ul li:nth-of-type(7) {
+    --upDown: 0em;
+    --leftRight: -10em;
+  }
+  
+  .vuurwerkContainer ul li:last-of-type {
+    --upDown: -10em;
+    --leftRight: 0em;
+  }
+  
+  @keyframes vuurwerkBoem {
+    0% {
+      transform: translate(0em, 0em) scale(1);
+    }
+  
+    /* unitless var, calc met * unit */
+  
+    100% {
+      transform: translate(var(--leftRight), var(--upDown));
+      opacity: 0;
+    }
+  }
+  
+  @keyframes vuurwerkPad {
+    7% {
+      transform: scale(2);
+    }
+  
+    99% {
+      background-color: black;
+    }
+  
+    100% {
+      transform: translate(4em, -28em) rotateX(30deg) rotateY(17deg)
+        rotateZ(11deg) scale(0.5);
+      background-color: transparent;
+    }
+  }

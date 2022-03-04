@@ -1,18 +1,25 @@
+@import url(../css/nuke.css);
+@import url(../css/firework.css);
+
 /*
 Speciaal font voor DVD
 Bron: https://www.pagecloud.com/blog/how-to-add-custom-fonts-to-any-website */
-@font-face {
+/* @font-face {
   font-family: "digitalsymbolsregular";
   src: url("../fonts/dvd-webfont.woff2") format("woff2"),
     url("../fonts/dvd-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 body {
   margin: 0;
   overflow: hidden;
   background: #ffe9d4;
+}
+
+header {
+  overflow: hidden;
 }
 
 header div:first-of-type {
@@ -59,528 +66,142 @@ header h1 {
   }
 }
 
-main div:first-of-type {
+.scene > div:last-of-type {
+  background-color: #2a2a72;
+  background: linear-gradient(0deg, rgba(138,225,255,1) 0%, rgba(24,129,255,1) 31%, rgba(0,11,47,1) 96%);
   width: 100vw;
-  height: 100vh;
-  background: #ad8762;
+  height: 73vh;
   position: fixed;
   top: 0;
+  bottom: auto;
+  background-position: 50% 0px;
+  background-size: 117%;
 }
 
-.scene {
-  perspective: 25vh;
-  width: 100vw;
-  height: 100vh;
-  transform-style: preserve-3d;
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* animation: shakeNuke 0.6s infinite;
-  animation-delay: 9.5s; */
-}
-
-.scene div {
-  background: #ad8762;
-  box-shadow: 0px 0px 200px 4px black inset, 0px 0px 200px -20px black;
-}
-
-/* Doos zeide Links */
-.scene div:first-of-type {
-  position: absolute;
-  height: 100vh;
-  width: 21em;
-  background: #ad8762;
-  transform-origin: left center;
-  transform: rotateY(90deg);
-  top: 0;
-  left: 0;
-}
-
-/* Doos zeide Top */
-.scene div:nth-of-type(2) {
-  position: absolute;
-  height: 21em;
-  width: 101vw;
-  transform-origin: center bottom;
-  transform: rotateX(90deg);
-  bottom: 0;
-}
-
-/* Doos zeide Bottom */
-.scene div:nth-of-type(3) {
-  position: absolute;
-  height: 21em;
-  width: 101vw;
-  transform-origin: center top;
-  transform: rotateX(-90deg);
-  top: 0;
-}
-
-/* Doos zeide Back */
-.scene div:nth-of-type(4) {
-  position: absolute;
-  height: 101vh;
-  width: 100vw;
-  transform-origin: center center;
-  transform: translateZ(-20em);
-  top: 0;
-  background-image: url(../images/sstadbackground.jfif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0em 21em;
-}
-
-/* Doos zeide Right */
-.scene div:last-of-type {
-  position: absolute;
-  height: 101vh;
-  width: 21em;
-  transform-origin: right center;
-  transform: rotateY(-90deg);
-  top: 0;
-  right: 0;
-}
-
-/* Firework arrow template */
-.vuurwerkContainer ul {
-  padding: 0;
-  margin: 0;
-  height: 0.4em;
-  width: 0.4em;
-  position: fixed;
-  list-style: none;
-  transform-origin: bottom;
-  /* bottom: var(--vuurwerkPijlPositieBottom, 10%); preset 2e */
-  bottom: var(--vuurwerkPijlPositieBottom);
-  left: var(--vuurwerkPijlPositieLeft);
-  z-index: var(--vuurwerkPijlzIndex);
-  background-color: var(--vuurwerkPijlColor);
-  animation: vuurwerkPad var(--vuurwerkPijlAnimatie) forwards ease-in;
-}
-
-/* Firework arrow variations */
-.vuurwerkContainer ul:first-of-type {
-  --vuurwerkPijlPositieLeft: 20%;
-  --vuurwerkPijlPositieBottom: 13%;
-  --vuurwerkPijlzIndex: 11;
-  --vuurwerkPijlColor: black;
-  --vuurwerkPijlAnimatie: 2s;
-  --ColorFirework: blue;
-}
-
-.vuurwerkContainer ul:nth-of-type(2) {
-  --vuurwerkPijlPositieLeft: 32%;
-  --vuurwerkPijlPositieBottom: 13%;
-  --vuurwerkPijlzIndex: 10;
-  --vuurwerkPijlColor: gray;
-  --vuurwerkPijlAnimatie: 3s;
-  --ColorFirework: green;
-}
-
-.vuurwerkContainer ul:last-of-type {
-  --vuurwerkPijlPositieLeft: 40%;
-  --vuurwerkPijlPositieBottom: 13%;
-  --vuurwerkPijlzIndex: 12;
-  --vuurwerkPijlColor: black;
-  --vuurwerkPijlAnimatie: 2.5s;
-  --ColorFirework: red;
-}
-
-/* Firework expotion template  */
-.vuurwerkContainer ul li {
-  position: absolute;
-  height: 1em;
-  width: 1em;
-  background: var(--ColorFirework);
-  border-radius: 50%;
-  animation: vuurwerkBoem 0.5s forwards;
-  animation-delay: var(--vuurwerkPijlAnimatie);
-  transform: scale(0);
-  /* animation-play-state: paused; */
-}
-
-/* Firework explotion expandtion */
-.vuurwerkContainer ul li:first-of-type {
-  --upDown: 10em;
-  --leftRight: 10em;
-}
-
-.vuurwerkContainer ul li:nth-of-type(2) {
-  --upDown: -10em;
-  --leftRight: 10em;
-}
-
-.vuurwerkContainer ul li:nth-of-type(3) {
-  --upDown: -10em;
-  --leftRight: -10em;
-}
-
-.vuurwerkContainer ul li:nth-of-type(4) {
-  --upDown: 10em;
-  --leftRight: -10em;
-}
-
-.vuurwerkContainer ul li:nth-of-type(5) {
-  --upDown: 0em;
-  --leftRight: 10em;
-}
-
-.vuurwerkContainer ul li:nth-of-type(6) {
-  --upDown: 10em;
-  --leftRight: 0em;
-}
-
-.vuurwerkContainer ul li:nth-of-type(7) {
-  --upDown: 0em;
-  --leftRight: -10em;
-}
-
-.vuurwerkContainer ul li:last-of-type {
-  --upDown: -10em;
-  --leftRight: 0em;
-}
-
-@keyframes vuurwerkBoem {
-  0% {
-    transform: translate(0em, 0em) scale(1);
-  }
-
-/* unitless var, calc met * unit */
-
-  100% {
-    transform: translate(var(--leftRight), var(--upDown));
-    opacity: 0;
-  }
-}
-
-@keyframes vuurwerkPad {
-  0% {
-  }
-
-  99% {
-    background-color: black;
-  }
-
-  100% {
-    transform: translate(4em, -28em) rotateX(30deg) rotateY(17deg)
-      rotateZ(11deg) scale(0.6);
-    background-color: transparent;
-  }
-}
-
-/* Nuke code  */
-
-main .atomBombContainer {
-  --NukeTimer: 0s;
-  --NukeTimerDelay: 0s;
-
-  width: 25em;
-  height: 25em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  position: fixed;
-  bottom: 0;
-  z-index: 110;
-  /* filter: blur(0.3em); */
-  transform: translate(51vw, -10vh) scale(0.2);
-}
-
-main .boompietest {
-  position: fixed;
-  z-index: 20;
-  bottom: -3.5em;
-  right: -10em;
-  width: 30em;
-  animation: shakeNuke calc(var(--NukeTimer) + 0.6s) infinite;
-  animation-delay: calc(var(--NukeTimer) + 7.1s);
-}
-
-main .boompietest2 {
-  position: fixed;
-  z-index: 10;
-  bottom: -6.5em;
-  right: -12em;
-  width: 55em;
-  animation: shakeNuke calc(var(--NukeTimer) + 0.6s) infinite;
-  animation-delay: calc(var(--NukeTimer) + 7.1s);
-}
-
-main .bomberPlane {
-  position: fixed;
-    z-index: 15;
-    top: -120em;
-    right: 5em;
-    width: 20em;
-}
-
-/* Shake voor de body tijdens de atoombom  */
-@keyframes shakeNuke {
-  10%,
-  90% {
-    transform: translate3d(-3px, 0, 0) rotate(1deg);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(3px, 0, 0);
-  }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-2px, 0, 0) rotate(-1deg);
-  }
-  40%,
-  60% {
-    transform: translate3d(3px, 0, 0);
-  }
-}
-
-/* BlastRadius visual */
-main .atomBombContainer section:first-of-type {
-  width: 1000%;
-  height: 1000%;
-  position: fixed;
-  background: rgb(184, 134, 11);
-  background: radial-gradient(
-    circle,
-    rgba(184, 134, 11, 1) 0%,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 1000;
-  animation: NukeBlast calc(var(--NukeTimer) + 10s) forwards;
-  animation-delay: calc(var(--NukeTimer) + 9s);
-  transform: scale(0);
-}
-
-@keyframes NukeBlast {
-  0% {
-    transform: scale(0);
-  }
-
-  90% {
-    transform: scale(100);
-    background: rgb(184, 134, 11);
-    background: radial-gradient(
-      circle,
-      rgba(184, 134, 11, 1) 0%,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-
-  100% {
-    transform: scale(100);
-    background: rgb(255, 255, 255);
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-}
-
-/* Nuke Falling visual  */
-main .atomBombContainer section:last-of-type {
-  width: 8em;
-    height: 5em;
-    position: fixed;
-    clip-path: polygon(59% 4%, 59% 23%, 55% 29%, 61% 54%, 61% 69%, 58% 78%, 54% 83%, 50% 83%, 44% 81%, 40% 74%, 39% 57%, 45% 29%, 41% 24%, 41% 4%, 48% 9%, 52% 9%);
-    top: 0;
-    transform: translateY(-112em) scale(0);
-    animation: NukeFalling calc(var(--NukeTimer) + 7s) cubic-bezier(0.600, 0.040, 0.980, 0.335) forwards;
-    z-index: 11;
-    background: black;
-}
-
-@keyframes NukeFalling {
-  0% {
-    transform: translateY(-112em) scale(0);
-  }
-
-  0.5% {
-    transform: translateY(-112em) scale(1);
-  }
-
-  99% {
-    transform: translateY(20em) scale(1);
-  }
-
-  100% {
-    transform: translateY(20em) scale(0);
-  }
-}
-
-main .atomBombContainer div {
-  width: 25em;
-  height: 25em;
-  position: fixed;
-  top: inherit;
-  bottom: 0;
-  transition: 4s;
-  opacity: 0;
-}
-
-/* Nuke Under */
-main .atomBombContainer div:first-of-type {
-  width: 25em;
-  height: 25em;
-  background: darkgoldenrod;
-  position: fixed;
-  clip-path: ellipse(15% 10% at 50% 100%);
-  animation: NukeUnder calc(var(--NukeTimer) + 2s) forwards;
-  animation-delay: calc(var(--NukeTimer) + 7s);
-  opacity: 0;
-  z-index: 11;
-}
-
-@keyframes NukeUnder {
-  0% {
-    clip-path: ellipse(15% 10% at 50% 100%);
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  100% {
-    clip-path: ellipse(50% 13% at 50% 100%);
-    opacity: 1;
-  }
-}
-
-/* Nuke mid  */
-main .atomBombContainer div:nth-of-type(2) {
-  background: darkgoldenrod;
-  clip-path: polygon(
-    77% 95%,
-    60% 75%,
-    59% 69%,
-    59% 64%,
-    59% 62%,
-    60% 58%,
-    34% 58%,
-    35% 63%,
-    34% 72%,
-    31% 77%,
-    19% 95%
-  );
-  height: 0em;
-  animation: NukeMid calc(var(--NukeTimer) + 2s) forwards;
-  animation-delay: calc(var(--NukeTimer) + 7s);
-  opacity: 0;
-  z-index: 11;
-}
-
-@keyframes NukeMid {
-  0% {
-    height: 0em;
-    opacity: 1;
-  }
-  20% {
-    height: 0em;
-  }
-
-  100% {
-    height: 25em;
-    opacity: 1;
-  }
-}
-
-/* Nuke top */
-main .atomBombContainer div:last-of-type {
-  clip-path: ellipse(28% 5% at 50% 100%);
-  background: darkgoldenrod;
-  animation: NukeTop calc(var(--NukeTimer) + 2s) forwards;
-  animation-delay: calc(var(--NukeTimer) + 7s);
-  z-index: 11;
-}
-
-@keyframes NukeTop {
-  0% {
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  20% {
-    clip-path: ellipse(28% 5% at 50% 100%);
-  }
-
-  100% {
-    clip-path: ellipse(50% 12% at 50% 50%);
-    opacity: 1;
-  }
-}
-
-/* img {
-  position: absolute;
-  z-index: 10;
-  bottom: 0;
-  width: 60%;
-} */
-
-/* Mario image
-div img:last-of-type {
-  transition: 4s;
-  width: 100%;
-  z-index: 1;
-  animation: marioLooptAnimatie 1s infinite;
-}
-
-Mario div
-.marioDraai {
-  animation: marioLooptPad 10s infinite;
-  position: absolute;
-  z-index: 15;
-  width: 15%;
+.scene img {
+  width: 10vw;
   height: auto;
-  bottom: 2vh;
-  right: 12vw;
-} */
+}
 
-/* transform: translate(-135%, -39%) scale(.6) rotateY(0deg) rotate(5deg); */
+.scene > div:first-of-type {
+  background-color: #63d471;
+  background-image: linear-gradient(183deg, #63d471 5%, #233329 130%);
+  width: 100vw;
+  height: 27vh;
+  position: fixed;
+  bottom: 0;
+  top: auto;
+}
 
-/* @keyframes marioLooptAnimatie {
-  0% {
-    transform: rotate(5deg);
-  }
+/* Cloud */
+.scene {
+  --cloudSize: .5;
+} 
 
-  50% {
-    transform: rotate(-5deg);
-  }
+.scene > div:last-of-type div:first-of-type {
+  --cloudSize: .3;
+  width: 16vh;
+  top: 60vh;
+  position: fixed;
+  height: 6vh;
+  background: #ECEFF1;
+  box-shadow: 5px 5px rgb(0 0 0 / 20%);
+  border-radius: 100px;
+  transform: translateX(-15vw) scale(var(--cloudSize));
+  animation: cloudPath 20s infinite linear;
+}
 
+.scene > div:last-of-type div:last-of-type {
+  --cloudSize: .2;
+  width: 16vh;
+  top: 65vh;
+  position: fixed;
+  height: 6vh;
+  background: #ECEFF1;
+  box-shadow: 5px 5px rgb(0 0 0 / 20%);
+  border-radius: 100px;
+  transform: translateX(-15vw) scale(var(--cloudSize));
+  animation: cloudPath 25s infinite linear;
+  animation-delay: -15s;
+}
+
+.scene > div:last-of-type div::after, .scene > div:last-of-type div::before{
+   content:"";
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+}
+.scene > div:last-of-type div::after{
+  width: 5vh;
+  height: 5vh;
+  top: -5vh;
+  left: 1vw;
+}
+.scene > div:last-of-type div::before{
+  width: 8vh;
+  height: 8vh;
+  top: -4vh;
+  left: 2vw;
+}
+
+@keyframes cloudPath {
   100% {
-    transform: rotate(5deg);
+    transform: translateX(115vw) scale(var(--cloudSize));
   }
 }
 
-@keyframes marioLooptPad {
-  0% {
-    transform: translate(1vw, 35vh) scale(1.5) rotateY(0deg);
-  }
+.controls {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 1vh;
+  left: 1vw;
+}
 
-  35% {
-    transform: translate(-36vw, -20vh) scale(0.5) rotateY(0deg);
-  }
+.controls > div {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 
-  40% {
-    transform: translate(-36vw, -20vh) scale(0.5) rotateY(180deg);
-  }
+.controls > div > div {
+  background: repeating-linear-gradient( 45deg, #ffc300, #ffe500 10px, #000000 10px, #000000 20px );
+  height: 22vh;
+  width: 22vw;
+  bottom: 2vh;
+  position: absolute;
+  z-index: 100;
+  box-shadow: 0px 0px 20px 14px black inset;
+  border: 10px solid black;
+}
 
-  65% {
-    transform: translate(-10vw, -20vh) scale(0.5) rotateY(180deg);
-  }
+.controls label div:active {
+  transform: scale(.9);
+}
 
-  70% {
-    transform: translate(-10vw, -20vh) scale(0.5) rotateY(0deg);
-  }
+.controls label[for="nuke"] div {
+  background-color: red;
+  width: 5vmax;
+  border-radius: 50%;
+  height: 5vmax;
+  bottom: 30%;
+  left: 20%;
+  position: absolute;
+  box-shadow: 0px 0px 20px -6px black inset;
+  cursor:not-allowed;
+}
 
-  100% {
-    transform: translate(1vw, 35vh) scale(1.5) rotateY(0deg);
-  }
-} */
+.controls label[for="firework"] div {
+  background-color: green;
+  width: 5vmax;
+  border-radius: 50%;
+  height: 5vmax;
+  bottom: 30%;
+  right: 20%;
+  position: absolute;
+  box-shadow: 0px 0px 20px -8px black inset;
+  cursor: pointer;
+}

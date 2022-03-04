@@ -1,0 +1,297 @@
+.atomBombContainer {
+  --airplaneFlyingTime: 7s;
+  --airplaneAtCityTimer: calc(var(--airplaneFlyingTime) / 5 * 4);
+  --nukeDrop: 3s;
+  --nukeExplitionTime: 4s;
+  --nukeExplitionDelay: calc(var(--airplaneAtCityTimer) + var(--nukeDrop));
+  --cityShakeDelay: calc(var(--nukeExplitionDelay) + .7s);
+  
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+}
+
+.atomBombContainer input {
+  display: none;
+}
+
+.atomBombContainer input:checked ~ div img, .atomBombContainer input:checked ~ div div {
+  animation-play-state: running !important;
+}
+
+.atomBombContainer div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Nuke itself */
+.atomBombContainer div div:first-of-type {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 37.5vh;
+  right: 21vw;
+}
+
+.atomBombContainer div div:first-of-type div {
+  position: absolute;
+  width: 1vw;
+  height: 1vw;
+  top: auto;
+  right: auto;
+  background: black;
+  clip-path: polygon(
+    59% 4%,
+    59% 23%,
+    55% 29%,
+    61% 54%,
+    61% 69%,
+    58% 78%,
+    54% 83%,
+    50% 83%,
+    44% 81%,
+    40% 74%,
+    39% 57%,
+    45% 29%,
+    41% 24%,
+    41% 4%,
+    48% 9%,
+    52% 9%
+  );
+  transform: scale(0);
+  animation: nukeFalling var(--nukeDrop) cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  animation-delay: var(--airplaneAtCityTimer);
+  filter: none;
+  animation-play-state: paused;
+}
+
+@keyframes nukeFalling {
+  0% {
+    transform: translateY(0vh) scale(0);
+  }
+
+  0.5% {
+    transform: translateY(0vh) scale(1);
+  }
+
+  100% {
+    transform: translateY(34vh);
+  }
+}
+
+/* Nuke explotion */
+.atomBombContainer div div:nth-of-type(2) {
+  position: absolute;
+  width: 0vw;
+  height: 0vw;
+  top: 70.5vh;
+  right: 21vw;
+  filter: blur(3px);
+}
+
+/* Explotion bottom */
+.atomBombContainer div div:nth-of-type(2) div:first-of-type {
+  width: 25vw;
+  height: 25vh;
+  background: rgb(184,179,11);
+background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40%, rgba(137,100,7,1) 53%, rgba(10,7,0,1) 100%);
+  position: absolute;
+  clip-path: ellipse(15% 10% at 50% 100%);
+  top: -22.5vh;
+  right: -13vw;
+  opacity: 0;
+  animation: bottomExplotion var(--nukeExplitionTime) forwards;
+  animation-delay: var(--nukeExplitionDelay);
+  animation-play-state: paused;
+  z-index: 10;
+}
+
+@keyframes bottomExplotion {
+  0% {
+    clip-path: ellipse(15% 10% at 50% 100%);
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  100% {
+    clip-path: ellipse(28% 16% at 50% 100%);
+    opacity: 1;
+  }
+}
+
+/* Explotion Middel */
+.atomBombContainer div div:nth-of-type(2) div:nth-of-type(2) {
+  width: 16vw;
+  height: 25vh;
+  background: rgb(184,179,11);
+background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40%, rgba(137,100,7,1) 53%, rgba(10,7,0,1) 100%);
+  position: absolute;
+  clip-path: polygon(
+    77% 95%,
+    60% 75%,
+    59% 69%,
+    59% 64%,
+    59% 62%,
+    60% 58%,
+    34% 58%,
+    35% 63%,
+    34% 72%,
+    31% 77%,
+    19% 95%
+  );
+  top: -22.5vh;
+  right: -9vw;
+  transform-origin: bottom;
+  transform: scale(0);
+  animation: middelExplotion var(--nukeExplitionTime) forwards;
+  animation-delay: var(--nukeExplitionDelay);
+  animation-play-state: paused;
+  z-index: 5;
+}
+
+@keyframes middelExplotion {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Explotion Top */
+.atomBombContainer div div:nth-of-type(2) div:last-of-type {
+  width: 16vw;
+  height: 25vh;
+  background: rgb(184,179,11);
+  background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 50%, rgba(38,27,0,1) 100%);
+  position: absolute;
+  clip-path: ellipse(17% 5% at 50% 100%);
+  top: -23.5vh;
+  right: -8.5vw;
+  transform: scale(1);
+  border-radius: 0;
+  filter: none;
+  bottom: 0;
+  transform-origin: bottom;
+  animation: topExplotion calc(var(--nukeExplitionTime) * 1.5) forwards;
+  animation-delay: var(--nukeExplitionDelay);
+  animation-play-state: paused;
+  z-index: 10;
+}
+
+@keyframes topExplotion {
+  100% {
+    transform: translateY(-8vh);
+    clip-path: ellipse(39% 24% at 50% 88%);
+  }
+}
+
+.atomBombContainer div img {
+  position: absolute;
+  transform-origin: bottom;
+}
+
+/* Airplane */
+.atomBombContainer div img:first-of-type {
+  width: 4vw;
+  top: 35vh;
+  transform: translateX(-4vw);
+  animation: airplaneFlying var(--airplaneFlyingTime) linear forwards;
+  animation-play-state: paused;
+}
+
+@keyframes airplaneFlying {
+  0% {
+    transform: translateX(-4vw);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* City images */
+.atomBombContainer div img:nth-of-type(2) {
+  width: 10vw;
+  bottom: 24.5vh;
+  right: 13vw;
+  animation: shakeNuke .5s infinite;
+  animation-delay: var(--cityShakeDelay);
+  animation-play-state: paused;
+}
+
+.atomBombContainer div img:nth-of-type(3) {
+  width: 11vw;
+  bottom: 24vh;
+  right: 17vw;
+  animation: shakeNuke .2s infinite;
+  animation-delay: var(--cityShakeDelay);
+  animation-play-state: paused;
+}
+
+.atomBombContainer div img:last-of-type {
+  width: 7vw;
+  bottom: 24.5vh;
+  right: 17vw;
+  animation: shakeNuke .3s infinite;
+  animation-delay: var(--cityShakeDelay);
+  animation-play-state: paused;
+}
+
+ /* Shake voor de body tijdens de atoombom  */
+ @keyframes shakeNuke {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(1deg) rotateX(5deg);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotateX(-5deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0) rotate(-1deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(1px, 0, 0) rotateX(2deg);
+  }
+}
+
+.atomBombContainer div ~ div:last-of-type {
+  background: #fff7d3; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #fff7d3 1%, #ffdd35 20%, #f17432 59%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #fff7d3 1%,#ffdd35 20%,#f17432 59%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #fff7d3 1%,#ffdd35 20%,#f17432 59%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff7d3', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  width: 10vw;
+  height: 10vw;
+  border-radius: 60%;
+  filter: blur(10px);
+  bottom: 19vh;
+  right: 16vw;
+  position: absolute;
+  z-index: 10000;
+  transform: scale(0);
+  animation: explotion 10s forwards;
+  animation-delay: calc(var(--cityShakeDelay) + 4s );
+  animation-play-state: paused;
+}
+
+@keyframes explotion {
+  20% {
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(500);
+    filter: blur(0px);
+  }
+}
