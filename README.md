@@ -122,7 +122,15 @@ Ook wilde ik graag met geluid werken, alleen kan je niet met css geluid inladen.
 ## Bronnen
 
 Lessen
+
 https://cssgradient.io/
+
 https://github.com/cmda-minor-web/css-to-the-rescue-2122
+
 https://www.w3schools.com/
+
+https://www.colorzilla.com/gradient-editor/
+
+https://projects.verou.me/css3patterns/
+
 
