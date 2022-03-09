@@ -1,4 +1,4 @@
-# CSS Vuurwerkshow
+# CSS Vuurwerkshow Tim de Roller
 
 Om deze show mogelijk te maken ben ik aan de slag gegaan met css variabelen, keyframes en selectoren.
 
@@ -15,6 +15,15 @@ Om de applicatie te kunnen zien moet je Javascript uit hebben staan. Lukt dit ni
 Vuurwerkshow met een kleine puzzel die je kan doen om het “grote mannen vuurwerk” te kunnen zien.
 
 Je ziet knoppen voor je waarmee je de show kunt activeren, maar dat is niet het enige wat je kunt doen. Als je specifieke items indrukt kan je het grote “grote mannen vuurwerk” activeren, wat een wat permanentere show geeft.
+
+## Wat heb ik nieuw geleerd?
+
+- Ik ben wat gaan experimenteren met `3d transform`, dit wilde ik gebruiken om een doos te maken. Vind het echt leuk om hier mee te experimenteren maar met de tijd die ik had heb ik in week 2 ervoor gekozen om mij meer te focussen op var's.
+
+- Ik ben een fan geworden van `variabelen` in css, deze zijn echt super handig om animaties en wat complexere code css te schijven. Ze gaan ook super fijn samen met `calc`.
+
+- css op splitten maakt werken met veel stijling erg overzichtelijk. Dit valt ook super goed samen met WAFS & met modules werken. 
+
 
 ## Week 1
 
