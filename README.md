@@ -2,7 +2,8 @@
 
 Om deze show mogelijk te maken ben ik aan de slag gegaan met css variabelen, keyframes en selectoren.
 
-![Foto vuurwerk show](https://user-images.githubusercontent.com/30145681/157448661-5674864f-0f1a-4721-a73b-8baef760fb77.png)
+![Please turn off javascript](https://user-images.githubusercontent.com/30145681/157458917-77b46121-0025-4145-915b-05bbf50dd10e.png)
+![Vuurwerk Show](https://user-images.githubusercontent.com/30145681/157459123-2a306208-4f05-49c4-a0e9-e52fcc77a30a.png)
 
 ## Mijn uitwerking
 
