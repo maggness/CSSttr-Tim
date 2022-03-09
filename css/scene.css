@@ -166,7 +166,7 @@ header h1 {
 }
 
 @media (orientation: portrait) {
-  main > div:last-of-type {
+  main > noscript div:last-of-type {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -179,7 +179,7 @@ header h1 {
     align-content: center;
   }
 
-  main > div:last-of-type p {
+  main > noscript div:last-of-type p {
     font-size: 1em;
     font-family: sans-serif;
     margin: 0 5%;
