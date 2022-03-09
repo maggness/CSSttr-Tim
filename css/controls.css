@@ -1,0 +1,125 @@
+.controls {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 1vh;
+  left: 1vw;
+}
+
+.controls > div {
+  position: relative;
+  height: 100vh;
+}
+
+.controls > div > div {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffc300,
+    #ffe500 10px,
+    #000000 10px,
+    #000000 20px
+  );
+  height: 11vw;
+  width: 22vw;
+  bottom: 2vh;
+  position: absolute;
+  z-index: 100;
+  box-shadow: 0px 0px 20px 14px black inset;
+  border: 10px solid black;
+}
+
+.controls div div > a div:last-of-type {
+    background: red;
+    padding: 0% 2vw;
+    border-radius: 5px;
+    color: white;
+    font-family: monospace;
+    font-weight: 400;
+    bottom: 1.8vh;
+    left: 7.8vw;
+    box-shadow: 0px 0px 20px -6px black inset;
+    position: absolute;
+    cursor: pointer;
+}
+
+.controls div div > a div:last-of-type p {
+    margin: 15% 0;
+}
+
+.controls div div > a div:active {
+    transform: scale(.8);
+}
+
+.controls label div:active {
+  transform: scale(0.9);
+}
+
+.controls label[for="nuke"] div {
+  background-color: red;
+  width: 4vw;
+  border-radius: 50%;
+  height: 4vw;
+  bottom: 40%;
+  left: 15%;
+  position: absolute;
+  box-shadow: 0px 0px 20px -6px black inset;
+  cursor: not-allowed;
+}
+
+.controls label[for="firework"] div {
+  background-color: green;
+  width: 4vw;
+  border-radius: 50%;
+  height: 4vw;
+  bottom: 40%;
+  right: 15%;
+  position: absolute;
+  box-shadow: 0px 0px 20px -8px black inset;
+  cursor: pointer;
+}
+
+label[for="deathstarInput"] div {
+  background-color: yellow;
+  width: 4vw;
+  border-radius: 50%;
+  height: 4vw;
+  bottom: 40%;
+  right: 41%;
+  position: absolute;
+  box-shadow: 0px 0px 20px -8px black inset;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 995px), screen and (max-height: 700px) {
+  .controls > div > div {
+    background: repeating-linear-gradient(
+      45deg,
+      #ffc300,
+      #ffe500 10px,
+      #000000 10px,
+      #000000 20px
+    );
+    height: 13vw;
+    width: 22vw;
+    bottom: 2vh;
+    position: absolute;
+    z-index: 100;
+    box-shadow: 0px 0px 20px 6px black inset;
+    border: 4px solid black;
+  }
+
+  .controls div div > a div:last-of-type {
+    background: red;
+    padding: 0% 2vw;
+    border-radius: 5px;
+    color: white;
+    font-family: monospace;
+    font-weight: 400;
+    bottom: 1.8vh;
+    left: 7.8vw;
+    box-shadow: 0px 0px 20px -6px black inset;
+    position: absolute;
+    cursor: pointer;
+    font-size: .6em;
+}
+}

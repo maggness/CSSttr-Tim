@@ -1,132 +1,185 @@
 /* Firework arrow template */
 .vuurwerkContainer ul {
-    padding: 0;
-    margin: 0;
-    height: 0.4em;
-    width: 0.4em;
-    position: fixed;
-    list-style: none;
-    transform-origin: bottom;
-    bottom: var(--vuurwerkPijlPositieBottom);
-    left: var(--vuurwerkPijlPositieLeft);
-    z-index: var(--vuurwerkPijlzIndex);
-    background-color: var(--vuurwerkPijlColor);
-    animation: vuurwerkPad var(--vuurwerkPijlAnimatie) forwards ease-in;
-    animation-play-state: paused;
-    transform: scale(0);
+  --vuurwerkPijlColor: black;
+  --vuurwerkVuurColor: linear-gradient(
+      0deg,
+      rgba(235, 218, 146, 1) 0%,
+      rgba(255, 206, 0, 1) 10%,
+      rgba(255, 0, 0, 1) 80%,
+      rgba(255, 0, 0, 1) 90%,
+      rgba(255, 0, 0, 0) 100%
+    ),
+    rgb(235, 218, 146);
+  padding: 0;
+  margin: 0;
+  height: 0.4vw;
+  width: 0.2vw;
+  position: fixed;
+  list-style: none;
+  transform-origin: bottom;
+  bottom: var(--vuurwerkPijlPositieBottom);
+  left: var(--vuurwerkPijlPositieLeft);
+  z-index: var(--vuurwerkPijlzIndex);
+  background-color: var(--vuurwerkPijlColor);
+  animation: vuurwerkPad var(--vuurwerkPijlAnimatie) forwards ease-in;
+  animation-play-state: paused;
+  transform: scale(0);
+}
+
+.vuurwerkContainer ul::before {
+  content: "";
+  width: 0.3vw;
+  height: 0.2vw;
+  top: -0.15vw;
+  left: -0.06vw;
+  background-color: var(--vuurwerkPijlColor);
+  position: absolute;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.vuurwerkContainer ul::after {
+  content: "";
+  width: 0.2vw;
+  height: 0.2vw;
+  background: var(--vuurwerkVuurColor);
+  position: absolute;
+  bottom: -0.38vh;
+  clip-path: polygon(
+    70% 0%,
+    81% 32%,
+    75% 43%,
+    71% 38%,
+    67% 55%,
+    60% 79%,
+    45% 85%,
+    35% 78%,
+    32% 58%,
+    28% 44%,
+    22% 53%,
+    16% 32%,
+    28% 0%
+  );
+  filter: blur(0.4px);
+  animation: flamesAnimation 0.2s infinite linear;
+}
+
+@keyframes flamesAnimation {
+  100% {
+    transform: scale(1.3);
   }
-  
-  /* Firework arrow variations */
-  .vuurwerkContainer ul:first-of-type {
-    --vuurwerkPijlPositieLeft: 20%;
-    --vuurwerkPijlPositieBottom: 13%;
-    --vuurwerkPijlzIndex: 11;
-    --vuurwerkPijlColor: black;
-    --vuurwerkPijlAnimatie: 2s;
-    --ColorFirework: blue;
+}
+
+/* Firework arrow variations */
+.vuurwerkContainer ul:first-of-type {
+  --vuurwerkPijlPositieLeft: 20%;
+  --vuurwerkPijlPositieBottom: 13%;
+  --vuurwerkPijlzIndex: 11;
+  --vuurwerkPijlAnimatie: 2s;
+  --ColorFirework: blue;
+  --vuurwerkPijlColor: red;
+}
+
+.vuurwerkContainer ul:nth-of-type(2) {
+  --vuurwerkPijlPositieLeft: 32%;
+  --vuurwerkPijlPositieBottom: 13%;
+  --vuurwerkPijlzIndex: 10;
+  --vuurwerkPijlAnimatie: 3s;
+  --ColorFirework: green;
+  --vuurwerkPijlColor: yellow;
+}
+
+.vuurwerkContainer ul:last-of-type {
+  --vuurwerkPijlPositieLeft: 40%;
+  --vuurwerkPijlPositieBottom: 13%;
+  --vuurwerkPijlzIndex: 12;
+  --vuurwerkPijlAnimatie: 2.5s;
+  --ColorFirework: red;
+  --vuurwerkPijlColor: purple;
+}
+
+.vuurwerkContainer input:checked ~ ul,
+.vuurwerkContainer input:checked ~ ul li {
+  animation-play-state: running;
+}
+
+/* Firework expotion template  */
+.vuurwerkContainer ul li {
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  background: var(--ColorFirework);
+  border-radius: 50%;
+  animation: vuurwerkBoem 0.5s forwards;
+  animation-delay: var(--vuurwerkPijlAnimatie);
+  transform: scale(0);
+  animation-play-state: paused;
+}
+
+/* Firework explotion expandtion */
+.vuurwerkContainer ul li:first-of-type {
+  --upDown: 10vw;
+  --leftRight: 10vw;
+}
+
+.vuurwerkContainer ul li:nth-of-type(2) {
+  --upDown: -10vw;
+  --leftRight: 10vw;
+}
+
+.vuurwerkContainer ul li:nth-of-type(3) {
+  --upDown: -10vw;
+  --leftRight: -10vw;
+}
+
+.vuurwerkContainer ul li:nth-of-type(4) {
+  --upDown: 10vw;
+  --leftRight: -10vw;
+}
+
+.vuurwerkContainer ul li:nth-of-type(5) {
+  --upDown: 0vw;
+  --leftRight: 10vw;
+}
+
+.vuurwerkContainer ul li:nth-of-type(6) {
+  --upDown: 10vw;
+  --leftRight: 0vw;
+}
+
+.vuurwerkContainer ul li:nth-of-type(7) {
+  --upDown: 0vw;
+  --leftRight: -10vw;
+}
+
+.vuurwerkContainer ul li:last-of-type {
+  --upDown: -10vw;
+  --leftRight: 0vw;
+}
+
+@keyframes vuurwerkBoem {
+  0% {
+    transform: translate(0em, 0em) scale(1);
   }
-  
-  .vuurwerkContainer ul:nth-of-type(2) {
-    --vuurwerkPijlPositieLeft: 32%;
-    --vuurwerkPijlPositieBottom: 13%;
-    --vuurwerkPijlzIndex: 10;
-    --vuurwerkPijlColor: gray;
-    --vuurwerkPijlAnimatie: 3s;
-    --ColorFirework: green;
+
+  100% {
+    transform: translate(var(--leftRight), var(--upDown));
+    opacity: 0;
   }
-  
-  .vuurwerkContainer ul:last-of-type {
-    --vuurwerkPijlPositieLeft: 40%;
-    --vuurwerkPijlPositieBottom: 13%;
-    --vuurwerkPijlzIndex: 12;
-    --vuurwerkPijlColor: black;
-    --vuurwerkPijlAnimatie: 2.5s;
-    --ColorFirework: red;
+}
+
+@keyframes vuurwerkPad {
+  7% {
+    transform: scale(2);
   }
-  
-  .vuurwerkContainer input:checked ~ ul, .vuurwerkContainer input:checked ~ ul li  {
-    animation-play-state: running;
+
+  99% {
+    --vuurwerkPijlColor: var(--vuurwerkPijlColor);
   }
-  
-  /* Firework expotion template  */
-  .vuurwerkContainer ul li {
-    position: absolute;
-    height: 1em;
-    width: 1em;
-    background: var(--ColorFirework);
-    border-radius: 50%;
-    animation: vuurwerkBoem 0.5s forwards;
-    animation-delay: var(--vuurwerkPijlAnimatie);
-    transform: scale(0);
-    animation-play-state: paused;
+
+  100% {
+    transform: translate(4vw, -28vw) rotateX(30deg) rotateY(17deg)
+      rotateZ(11deg) scale(0.5);
+    --vuurwerkPijlColor: transparent;
+    --vuurwerkVuurColor: var(--vuurwerkPijlColor);
   }
-  
-  /* Firework explotion expandtion */
-  .vuurwerkContainer ul li:first-of-type {
-    --upDown: 10em;
-    --leftRight: 10em;
-  }
-  
-  .vuurwerkContainer ul li:nth-of-type(2) {
-    --upDown: -10em;
-    --leftRight: 10em;
-  }
-  
-  .vuurwerkContainer ul li:nth-of-type(3) {
-    --upDown: -10em;
-    --leftRight: -10em;
-  }
-  
-  .vuurwerkContainer ul li:nth-of-type(4) {
-    --upDown: 10em;
-    --leftRight: -10em;
-  }
-  
-  .vuurwerkContainer ul li:nth-of-type(5) {
-    --upDown: 0em;
-    --leftRight: 10em;
-  }
-  
-  .vuurwerkContainer ul li:nth-of-type(6) {
-    --upDown: 10em;
-    --leftRight: 0em;
-  }
-  
-  .vuurwerkContainer ul li:nth-of-type(7) {
-    --upDown: 0em;
-    --leftRight: -10em;
-  }
-  
-  .vuurwerkContainer ul li:last-of-type {
-    --upDown: -10em;
-    --leftRight: 0em;
-  }
-  
-  @keyframes vuurwerkBoem {
-    0% {
-      transform: translate(0em, 0em) scale(1);
-    }
-  
-    /* unitless var, calc met * unit */
-  
-    100% {
-      transform: translate(var(--leftRight), var(--upDown));
-      opacity: 0;
-    }
-  }
-  
-  @keyframes vuurwerkPad {
-    7% {
-      transform: scale(2);
-    }
-  
-    99% {
-      background-color: black;
-    }
-  
-    100% {
-      transform: translate(4em, -28em) rotateX(30deg) rotateY(17deg)
-        rotateZ(11deg) scale(0.5);
-      background-color: transparent;
-    }
-  }
+}

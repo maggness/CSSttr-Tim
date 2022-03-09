@@ -4,20 +4,22 @@
   --nukeDrop: 3s;
   --nukeExplitionTime: 4s;
   --nukeExplitionDelay: calc(var(--airplaneAtCityTimer) + var(--nukeDrop));
-  --cityShakeDelay: calc(var(--nukeExplitionDelay) + .7s);
-  
+  --cityShakeDelay: calc(var(--nukeExplitionDelay) + 0.7s);
+
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
   z-index: 10;
+  pointer-events: none;
 }
 
 .atomBombContainer input {
   display: none;
 }
 
-.atomBombContainer input:checked ~ div img, .atomBombContainer input:checked ~ div div {
+.atomBombContainer input:checked ~ div img,
+.atomBombContainer input:checked ~ div div {
   animation-play-state: running !important;
 }
 
@@ -96,8 +98,14 @@
 .atomBombContainer div div:nth-of-type(2) div:first-of-type {
   width: 25vw;
   height: 25vh;
-  background: rgb(184,179,11);
-background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40%, rgba(137,100,7,1) 53%, rgba(10,7,0,1) 100%);
+  background: rgb(184, 179, 11);
+  background: radial-gradient(
+    circle,
+    rgba(184, 179, 11, 1) 0%,
+    rgba(184, 134, 11, 1) 40%,
+    rgba(137, 100, 7, 1) 53%,
+    rgba(10, 7, 0, 1) 100%
+  );
   position: absolute;
   clip-path: ellipse(15% 10% at 50% 100%);
   top: -22.5vh;
@@ -128,8 +136,14 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
 .atomBombContainer div div:nth-of-type(2) div:nth-of-type(2) {
   width: 16vw;
   height: 25vh;
-  background: rgb(184,179,11);
-background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40%, rgba(137,100,7,1) 53%, rgba(10,7,0,1) 100%);
+  background: rgb(184, 179, 11);
+  background: radial-gradient(
+    circle,
+    rgba(184, 179, 11, 1) 0%,
+    rgba(184, 134, 11, 1) 40%,
+    rgba(137, 100, 7, 1) 53%,
+    rgba(10, 7, 0, 1) 100%
+  );
   position: absolute;
   clip-path: polygon(
     77% 95%,
@@ -168,8 +182,13 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
 .atomBombContainer div div:nth-of-type(2) div:last-of-type {
   width: 16vw;
   height: 25vh;
-  background: rgb(184,179,11);
-  background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 50%, rgba(38,27,0,1) 100%);
+  background: rgb(184, 179, 11);
+  background: radial-gradient(
+    circle,
+    rgba(184, 179, 11, 1) 0%,
+    rgba(184, 134, 11, 1) 50%,
+    rgba(38, 27, 0, 1) 100%
+  );
   position: absolute;
   clip-path: ellipse(17% 5% at 50% 100%);
   top: -23.5vh;
@@ -221,7 +240,7 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
   width: 10vw;
   bottom: 24.5vh;
   right: 13vw;
-  animation: shakeNuke .5s infinite;
+  animation: shakeNuke 0.5s infinite;
   animation-delay: var(--cityShakeDelay);
   animation-play-state: paused;
 }
@@ -230,7 +249,7 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
   width: 11vw;
   bottom: 24vh;
   right: 17vw;
-  animation: shakeNuke .2s infinite;
+  animation: shakeNuke 0.2s infinite;
   animation-delay: var(--cityShakeDelay);
   animation-play-state: paused;
 }
@@ -239,7 +258,7 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
   width: 7vw;
   bottom: 24.5vh;
   right: 17vw;
-  animation: shakeNuke .3s infinite;
+  animation: shakeNuke 0.3s infinite;
   animation-delay: var(--cityShakeDelay);
   animation-play-state: paused;
 }
@@ -247,23 +266,23 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
 .atomBombContainer div > input:last-of-type {
   display: block;
   position: fixed;
-  width: 7vw;
+  width: 17vw;
   bottom: 22.5vh;
-  right: 17vw;
+  right: 12vw;
   background: none;
   border: none;
   z-index: 1000;
   text-align: center;
   cursor: text;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .atomBombContainer div > input:last-of-type:focus {
   outline: none;
 }
 
- /* Shake voor de body tijdens de atoombom  */
- @keyframes shakeNuke {
+/* Shake voor de body tijdens de atoombom  */
+@keyframes shakeNuke {
   10%,
   90% {
     transform: translate3d(-1px, 0, 0) rotate(1deg) rotateX(5deg);
@@ -286,9 +305,29 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
 
 .atomBombContainer div ~ div:last-of-type {
   background: #fff7d3; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #fff7d3 1%, #ffdd35 20%, #f17432 59%, #000000 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover,  #fff7d3 1%,#ffdd35 20%,#f17432 59%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center,  #fff7d3 1%,#ffdd35 20%,#f17432 59%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #fff7d3 1%,
+    #ffdd35 20%,
+    #f17432 59%,
+    #000000 100%
+  ); /* FF3.6-15 */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #fff7d3 1%,
+    #ffdd35 20%,
+    #f17432 59%,
+    #000000 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    #fff7d3 1%,
+    #ffdd35 20%,
+    #f17432 59%,
+    #000000 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff7d3', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   width: 10vw;
   height: 10vw;
@@ -300,7 +339,7 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
   z-index: 10000;
   transform: scale(0);
   animation: explotion 10s forwards;
-  animation-delay: calc(var(--cityShakeDelay) + 4s );
+  animation-delay: calc(var(--cityShakeDelay) + 4s);
   animation-play-state: paused;
 }
 
@@ -311,5 +350,21 @@ background: radial-gradient(circle, rgba(184,179,11,1) 0%, rgba(184,134,11,1) 40
   100% {
     transform: scale(500);
     filter: blur(0px);
+  }
+}
+
+@media only screen and (max-width: 995px), screen and (max-height: 700px) {
+  .atomBombContainer div > input:last-of-type {
+    display: block;
+    position: fixed;
+    width: 17vw;
+    bottom: 19.5vh;
+    right: 12vw;
+    background: none;
+    border: none;
+    z-index: 1000;
+    text-align: center;
+    cursor: text;
+    font-size: 0.9em;
   }
 }

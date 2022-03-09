@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Vuurwerk show</title>
   </head>
   <body>
     <header>
@@ -13,9 +13,26 @@
       </div>
     </header>
     <main>
-      <!-- <noscript> -->
+
+      <noscript>
       <!-- No script background -->
       <div></div>
+
+      <!-- Deathstar -->
+      <audio controls>
+        <source src="./images/starwars.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+        <div class="deathStar">
+          <input type="checkbox" id="deathstarInput">
+            <div>
+              <div></div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </input>
+        </div>
 
       <!-- Nuke  -->
       <section class="atomBombContainer">
@@ -53,11 +70,21 @@
           <div>
             <label for="nuke">
               <div></div>
-            </label>  
+            </label> 
+            
+            <label for="deathstarInput">
+              <div></div>
+            </label> 
             
             <label for="firework">
               <div></div>
             </label> 
+
+            <a href="/">
+              <div>
+                <p>Reset</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -65,7 +92,7 @@
       <section class="vuurwerkContainer">
         <input type="checkbox" id="firework">
           <!-- Vuurwerk pijlen -->
-          <ul class="test VuurwerkPijl">
+          <ul>
             <li></li>
             <li></li>
             <li></li>
@@ -76,7 +103,7 @@
             <li></li>
           </ul>
 
-          <ul class="test2 VuurwerkPijl">
+          <ul>
             <li></li>
             <li></li>
             <li></li>
@@ -87,7 +114,7 @@
             <li></li>
           </ul>
 
-          <ul class="test3 VuurwerkPijl">
+          <ul>
             <li></li>
             <li></li>
             <li></li>
@@ -107,9 +134,6 @@
         </div>
         <!-- Background -->
         <div>
-          <div>
-            <div></div>
-          </div>
           <!-- Cloud's -->
           <div></div>
           <div></div>
@@ -118,7 +142,11 @@
         </div>
       </div>
 
-      <!-- </noscript> -->
+      <div>
+        <p>Please Rotate your screen for a show :)</p>
+      </div>
+
+      </noscript>
     </main>
   </body>
 </html>

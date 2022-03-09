@@ -1,0 +1,177 @@
+/* Star wars Audio  */
+audio {
+  transform: rotate(180deg) scale(1.5);
+  width: 11vw;
+  height: 9vw;
+  position: fixed;
+  top: 3vw;
+  z-index: 1;
+  left: -8vw;
+}
+
+audio:focus {
+  outline: none;
+}
+
+/* Death Star mkIII */
+.deathStar {
+  position: fixed;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 150px;
+  background: linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+    linear-gradient(63deg, transparent 74%, #999 78%),
+    linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+    #444;
+  background-size: 3px 9px;
+  transform: rotate(15deg);
+  border: 1px solid gray;
+  left: -2vw;
+  top: -2vh;
+  z-index: 100;
+  box-shadow: 1px 0px 23px -5px black inset;
+  animation-play-state: paused;
+  pointer-events: none;
+}
+
+.deathStar input {
+  opacity: 0;
+}
+
+.deathStar input:checked ~ div,
+.deathStar input:checked ~ div div {
+  animation-play-state: running !important;
+}
+
+.deathStar > div:first-of-type {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 150px;
+  left: 5vw;
+  top: 5vw;
+  background-color: gray;
+  box-shadow: 1px 0px 23px -15px black inset;
+}
+
+.deathStar > div:first-of-type > div:first-of-type {
+  width: 0.2vw;
+  position: absolute;
+  height: 1.7vw;
+  background-color: #32cd32;
+  top: 0vw;
+  left: 1.9vw;
+  transform: rotate(0deg);
+  transform-origin: center;
+  box-shadow: 0px 2.25vw #32cd32;
+  opacity: 0;
+  animation: deathStarCharge 4s ease-in forwards;
+  animation-play-state: paused;
+}
+
+.deathStar > div:first-of-type > div:first-of-type::before {
+  width: 0.2vw;
+  position: absolute;
+  height: 1.7vw;
+  background-color: #32cd32;
+  top: 0.6vw;
+  left: 0.95vw;
+  transform: rotate(60deg);
+  box-shadow: 0px 2.25vw #32cd32;
+  content: "";
+}
+
+.deathStar > div:first-of-type > div:first-of-type::after {
+  width: 0.2vw;
+  position: absolute;
+  height: 1.7vw;
+  background-color: #32cd32;
+  top: 1.7vw;
+  left: 0.95vw;
+  transform: rotate(120deg);
+  box-shadow: 0px 2.25vw #32cd32;
+  content: "";
+}
+
+@keyframes deathStarCharge {
+  100% {
+    opacity: 1;
+  }
+}
+
+.deathStar > div:nth-of-type(2) {
+  width: 2vw;
+  height: 2vw;
+  background: lime;
+  border-radius: 150px;
+  top: 6vw;
+  position: fixed;
+  left: 6vw;
+  box-shadow: 4px 0px 22px green inset;
+  transform: scale(0);
+  animation: deathStarChargeCircle 1s forwards ease-in;
+  animation-delay: 4s;
+  animation-play-state: paused;
+}
+
+@keyframes deathStarChargeCircle {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.deathStar > div:last-of-type {
+  position: fixed;
+  width: 110vw;
+  height: 34vw;
+  background: rgb(82, 255, 0);
+  background: linear-gradient(
+    178deg,
+    rgba(82, 255, 0, 1) 0%,
+    rgba(50, 171, 2, 1) 46%,
+    rgba(82, 255, 0, 1) 72%,
+    rgba(36, 161, 0, 1) 100%
+  );
+  top: 8.7vw;
+  left: 5.4vw;
+  transform: rotate(10deg);
+  clip-path: polygon(0% 50%, 0% 51%, 0% 50%);
+  transform-origin: right;
+  animation: 0.3s deathStarBlast ease-out forwards;
+  animation-delay: 5.2s;
+  animation-play-state: paused;
+}
+
+@keyframes deathStarBlast {
+  0% {
+    clip-path: polygon(0% 50%, 0% 51%, 0% 50%);
+  }
+
+  100% {
+    clip-path: polygon(100% 0, 0 51%, 100% 100%);
+  }
+}
+
+@media only screen and (max-width: 1200px), screen and (max-height: 700px) {
+  audio {
+    transform: rotate(180deg) scale(1.5);
+    width: 14vw;
+    height: 9vw;
+    position: fixed;
+    top: 2vw;
+    z-index: 1;
+    left: -10vw;
+  }
+}
+
+@media only screen and (max-width: 995px), screen and (max-height: 700px) {
+  audio {
+    transform: rotate(180deg) scale(1.5);
+    width: 14vw;
+    height: 5vw;
+    position: fixed;
+    top: 2vw;
+    z-index: 1;
+    left: -10vw;
+  }
+}
