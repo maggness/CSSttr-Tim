@@ -10,12 +10,6 @@ Om de applicatie te kunnen zien moet je Javascript uit hebben staan. Lukt dit ni
 ![Vuurwerk Show](https://user-images.githubusercontent.com/30145681/157459123-2a306208-4f05-49c4-a0e9-e52fcc77a30a.png)
 
 
-### Mijn uitwerking
-
-Vuurwerkshow met een kleine puzzel die je kan doen om het “grote mannen vuurwerk” te kunnen zien.
-
-Je ziet knoppen voor je waarmee je de show kunt activeren, maar dat is niet het enige wat je kunt doen. Als je specifieke items indrukt kan je het grote “grote mannen vuurwerk” activeren, wat een wat permanentere show geeft.
-
 ## Wat heb ik nieuw geleerd?
 
 - Ik ben wat gaan experimenteren met `3d transform`, dit wilde ik gebruiken om een doos te maken. Vind het echt leuk om hier mee te experimenteren maar met de tijd die ik had heb ik in week 2 ervoor gekozen om mij meer te focussen op var's.
