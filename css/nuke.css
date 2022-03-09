@@ -275,6 +275,7 @@
   text-align: center;
   cursor: text;
   font-size: 0.9em;
+  pointer-events: all;
 }
 
 .atomBombContainer div > input:last-of-type:focus {
