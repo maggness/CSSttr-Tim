@@ -55,4 +55,15 @@ En geef ik per pijl de positie, kleur enzv.
   --ColorFirework: blue;
 }
 ```
+### Week 3
+
+Ik ben begonnen met het opschonen van mijn code en het op te delen in verschillende css files. 
+
+![css opgedeelt](https://user-images.githubusercontent.com/30145681/157451134-f0ef14fd-2ad8-4543-a576-9cab0ecf41b7.png)
+
+
+Ook was mijn vuurwerk niet responsive, hier heb ik deze week veel aan gewerkt. Ik heb de nuke en vuurwerk opnieuw gemaakt voor mobiel. Bij mobiel is de show alleen te zien als je je mobiel op landscape heb.
+
+
+
 
