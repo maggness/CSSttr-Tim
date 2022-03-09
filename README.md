@@ -64,6 +64,30 @@ Ik ben begonnen met het opschonen van mijn code en het op te delen in verschille
 
 Ook was mijn vuurwerk niet responsive, hier heb ik deze week veel aan gewerkt. Ik heb de nuke en vuurwerk opnieuw gemaakt voor mobiel. Bij mobiel is de show alleen te zien als je je mobiel op landscape heb.
 
+Om de nuke snelheid te besturen ben ik met var gaan werken:
+```css 
+  --airplaneFlyingTime: 7s;
+  --airplaneAtCityTimer: calc(var(--airplaneFlyingTime) / 5 * 4);
+  --nukeDrop: 3s;
+  --nukeExplitionTime: 4s;
+  --nukeExplitionDelay: calc(var(--airplaneAtCityTimer) + var(--nukeDrop));
+  --cityShakeDelay: calc(var(--nukeExplitionDelay) + 0.7s);
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+```
+Zo zitten de animaties goed in elkaar, ook als je de tijd veranderd. Je kan nu ook de stad een naam geven. 
+
+![Stad foto](https://user-images.githubusercontent.com/30145681/157453613-8ce31a59-5a06-4a94-ad4c-e5ba53320da7.png)
+
+
+
+### Week 4
+
 
 
 
