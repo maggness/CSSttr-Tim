@@ -2,6 +2,8 @@
 
 Om deze show mogelijk te maken ben ik aan de slag gegaan met css variabelen, keyframes en selectoren.
 
+![Foto vuurwerk show](https://user-images.githubusercontent.com/30145681/157448661-5674864f-0f1a-4721-a73b-8baef760fb77.png)
+
 ## Mijn uitwerking
 
 Vuurwerkshow met een kleine puzzel die je kan doen om het “grote mannen vuurwerk” te kunnen zien.
