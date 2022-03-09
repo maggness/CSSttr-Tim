@@ -2,6 +2,8 @@
 
 Om deze show mogelijk te maken ben ik aan de slag gegaan met css variabelen, keyframes en selectoren.
 
+![Foto vuurwerk show](https://user-images.githubusercontent.com/30145681/157448661-5674864f-0f1a-4721-a73b-8baef760fb77.png)
+
 ## Mijn uitwerking
 
 Vuurwerkshow met een kleine puzzel die je kan doen om het “grote mannen vuurwerk” te kunnen zien.
@@ -53,4 +55,39 @@ En geef ik per pijl de positie, kleur enzv.
   --ColorFirework: blue;
 }
 ```
+### Week 3
+
+Ik ben begonnen met het opschonen van mijn code en het op te delen in verschillende css files. 
+
+![css opgedeelt](https://user-images.githubusercontent.com/30145681/157451134-f0ef14fd-2ad8-4543-a576-9cab0ecf41b7.png)
+
+
+Ook was mijn vuurwerk niet responsive, hier heb ik deze week veel aan gewerkt. Ik heb de nuke en vuurwerk opnieuw gemaakt voor mobiel. Bij mobiel is de show alleen te zien als je je mobiel op landscape heb.
+
+Om de nuke snelheid te besturen ben ik met var gaan werken:
+```css 
+  --airplaneFlyingTime: 7s;
+  --airplaneAtCityTimer: calc(var(--airplaneFlyingTime) / 5 * 4);
+  --nukeDrop: 3s;
+  --nukeExplitionTime: 4s;
+  --nukeExplitionDelay: calc(var(--airplaneAtCityTimer) + var(--nukeDrop));
+  --cityShakeDelay: calc(var(--nukeExplitionDelay) + 0.7s);
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+```
+Zo zitten de animaties goed in elkaar, ook als je de tijd veranderd. Je kan nu ook de stad een naam geven. 
+
+![Stad foto](https://user-images.githubusercontent.com/30145681/157453613-8ce31a59-5a06-4a94-ad4c-e5ba53320da7.png)
+
+
+
+### Week 4
+
+
+
 
