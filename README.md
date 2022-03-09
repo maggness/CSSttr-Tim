@@ -3,15 +3,20 @@
 Om deze show mogelijk te maken ben ik aan de slag gegaan met css variabelen, keyframes en selectoren.
 
 ![Please turn off javascript](https://user-images.githubusercontent.com/30145681/157458917-77b46121-0025-4145-915b-05bbf50dd10e.png)
+
+Om de applicatie te kunnen zien moet je Javascript uit hebben staan. Lukt dit niet? Haal dan de `<noscript>` tags weg.
+
+
 ![Vuurwerk Show](https://user-images.githubusercontent.com/30145681/157459123-2a306208-4f05-49c4-a0e9-e52fcc77a30a.png)
 
-## Mijn uitwerking
+
+### Mijn uitwerking
 
 Vuurwerkshow met een kleine puzzel die je kan doen om het “grote mannen vuurwerk” te kunnen zien.
 
 Je ziet knoppen voor je waarmee je de show kunt activeren, maar dat is niet het enige wat je kunt doen. Als je specifieke items indrukt kan je het grote “grote mannen vuurwerk” activeren, wat een wat permanentere show geeft.
 
-### Idee week 1
+## Week 1
 
 Ik wil een kijkdoos maken waar je in het klein een show ziet. Je drukt op een punt en een mannetje loopt dan naar dat punt om vuurwerk aan te steken. Het gaat er een beetje uitzien als paper mario, witte uitsnedes en 2d items die op een 3d plane lopen.
 
@@ -23,7 +28,7 @@ Ook ben ik met `@keyframes` gaan spelen voor het grote mannen vuurwerk. Ik wil h
 ![V1 BOX](https://user-images.githubusercontent.com/30145681/156364272-d9c6b363-339c-4295-b7d0-ccd544c56289.png)
 
 
-### Idee week 2
+## Week 2
 
 Ik ga 3 vuurwerk pijlen maken met css variabelen om hiermee te experimenteren. Ik heb een soort template gemaakt voor elke pijl, waar ik alleen de translated verander per pijl.
 ```css
@@ -56,7 +61,7 @@ En geef ik per pijl de positie, kleur enzv.
   --ColorFirework: blue;
 }
 ```
-### Week 3
+## Week 3
 
 Ik ben begonnen met het opschonen van mijn code en het op te delen in verschillende css files. 
 
@@ -87,8 +92,15 @@ Zo zitten de animaties goed in elkaar, ook als je de tijd veranderd. Je kan nu o
 
 
 
-### Week 4
+## Week 4
 
+De lucht was nog wat leeg dus ik heb de deathstar toegevoegd
 
+![deathStar](https://user-images.githubusercontent.com/30145681/157460338-3b0873d6-77d0-466a-a656-a21b94d3d400.png)
 
+En natuurijk kan deze ook schieten
+
+![deathstar blast](https://user-images.githubusercontent.com/30145681/157460461-9e85eef8-6ba5-4bb2-8237-2ffcbcb1dd6c.png)
+
+Ik heb verder nog de code opgeschoont en wilde wat meer werken met `::before` en `::after` dus dit heb ik toegepast op de vuurpijlen & wolkjes.
 
