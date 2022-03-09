@@ -24,6 +24,16 @@ Je ziet knoppen voor je waarmee je de show kunt activeren, maar dat is niet het 
 
 - css op splitten maakt werken met veel stijling erg overzichtelijk. Dit valt ook super goed samen met WAFS & met modules werken. 
 
+- Werken met checkboxes en labels om elementen te stylen
+
+- Keyframes chainen & animaties maken
+
+- Je kan `<noscript>` gebruiken om een bericht te laten zien als javascript uit staat. Of juist de volledige pagina alleen te laten als javascript uit staat.
+
+- Je kan met `prefers-color-scheme` darkmode of lightmode toepassen op je website. Dit heb ik zelf niet gebruikt maar als ik meer tijd heb zou ik dit wel toevoegen.
+
+- Je kan met `prefers-reduced-motion` in je css animaties minder intens maken voor mensen die dit hebben aangevinkt. Dit heb ik zelf niet gebruikt maar als ik meer tijd heb zou ik dit wel toevoegen.
+
 
 ## Week 1
 
