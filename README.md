@@ -118,3 +118,11 @@ En natuurijk kan deze ook schieten
 Ik heb verder nog de code opgeschoont en wilde wat meer werken met `::before` en `::after` dus dit heb ik toegepast op de vuurpijlen & wolkjes.
 
 Ook wilde ik graag met geluid werken, alleen kan je niet met css geluid inladen. Het is gelukt om muziek af te spelen als je op het midden van de death star drukt, dit door `pointer-event: none;` te gebruiken. Zo kan je door een div heen klikken.
+
+## Bronnen
+
+Lessen
+https://cssgradient.io/
+https://github.com/cmda-minor-web/css-to-the-rescue-2122
+https://www.w3schools.com/
+
