@@ -1,16 +1,35 @@
-# CSS Vuurwerkshow
+# CSS Vuurwerkshow Tim de Roller
 
 Om deze show mogelijk te maken ben ik aan de slag gegaan met css variabelen, keyframes en selectoren.
 
-![Foto vuurwerk show](https://user-images.githubusercontent.com/30145681/157448661-5674864f-0f1a-4721-a73b-8baef760fb77.png)
+![Please turn off javascript](https://user-images.githubusercontent.com/30145681/157458917-77b46121-0025-4145-915b-05bbf50dd10e.png)
 
-## Mijn uitwerking
+Om de applicatie te kunnen zien moet je Javascript uit hebben staan. Lukt dit niet? Haal dan de `<noscript>` tags weg.
 
-Vuurwerkshow met een kleine puzzel die je kan doen om het “grote mannen vuurwerk” te kunnen zien.
 
-Je ziet knoppen voor je waarmee je de show kunt activeren, maar dat is niet het enige wat je kunt doen. Als je specifieke items indrukt kan je het grote “grote mannen vuurwerk” activeren, wat een wat permanentere show geeft.
+![Vuurwerk Show](https://user-images.githubusercontent.com/30145681/157459123-2a306208-4f05-49c4-a0e9-e52fcc77a30a.png)
 
-### Idee week 1
+
+## Wat heb ik nieuw geleerd?
+
+- Ik ben wat gaan experimenteren met `3d transform`, dit wilde ik gebruiken om een doos te maken. Vind het echt leuk om hier mee te experimenteren maar met de tijd die ik had heb ik in week 2 ervoor gekozen om mij meer te focussen op var's.
+
+- Ik ben een fan geworden van `variabelen` in css, deze zijn echt super handig om animaties en wat complexere code css te schijven. Ze gaan ook super fijn samen met `calc`.
+
+- css op splitten maakt werken met veel stijling erg overzichtelijk. Dit valt ook super goed samen met WAFS & met modules werken. 
+
+- Werken met checkboxes en labels om elementen te stylen
+
+- Keyframes chainen & animaties maken
+
+- Je kan `<noscript>` gebruiken om een bericht te laten zien als javascript uit staat. Of juist de volledige pagina alleen te laten als javascript uit staat.
+
+- Je kan met `prefers-color-scheme` darkmode of lightmode toepassen op je website. Dit heb ik zelf niet gebruikt maar als ik meer tijd heb zou ik dit wel toevoegen.
+
+- Je kan met `prefers-reduced-motion` in je css animaties minder intens maken voor mensen die dit hebben aangevinkt. Dit heb ik zelf niet gebruikt maar als ik meer tijd heb zou ik dit wel toevoegen.
+
+
+## Week 1
 
 Ik wil een kijkdoos maken waar je in het klein een show ziet. Je drukt op een punt en een mannetje loopt dan naar dat punt om vuurwerk aan te steken. Het gaat er een beetje uitzien als paper mario, witte uitsnedes en 2d items die op een 3d plane lopen.
 
@@ -22,7 +41,7 @@ Ook ben ik met `@keyframes` gaan spelen voor het grote mannen vuurwerk. Ik wil h
 ![V1 BOX](https://user-images.githubusercontent.com/30145681/156364272-d9c6b363-339c-4295-b7d0-ccd544c56289.png)
 
 
-### Idee week 2
+## Week 2
 
 Ik ga 3 vuurwerk pijlen maken met css variabelen om hiermee te experimenteren. Ik heb een soort template gemaakt voor elke pijl, waar ik alleen de translated verander per pijl.
 ```css
@@ -55,7 +74,7 @@ En geef ik per pijl de positie, kleur enzv.
   --ColorFirework: blue;
 }
 ```
-### Week 3
+## Week 3
 
 Ik ben begonnen met het opschonen van mijn code en het op te delen in verschillende css files. 
 
@@ -86,8 +105,16 @@ Zo zitten de animaties goed in elkaar, ook als je de tijd veranderd. Je kan nu o
 
 
 
-### Week 4
+## Week 4
 
+De lucht was nog wat leeg dus ik heb de deathstar toegevoegd
 
+![deathStar](https://user-images.githubusercontent.com/30145681/157460338-3b0873d6-77d0-466a-a656-a21b94d3d400.png)
 
+En natuurijk kan deze ook schieten
 
+![deathstar blast](https://user-images.githubusercontent.com/30145681/157460461-9e85eef8-6ba5-4bb2-8237-2ffcbcb1dd6c.png)
+
+Ik heb verder nog de code opgeschoont en wilde wat meer werken met `::before` en `::after` dus dit heb ik toegepast op de vuurpijlen & wolkjes.
+
+Ook wilde ik graag met geluid werken, alleen kan je niet met css geluid inladen. Het is gelukt om muziek af te spelen als je op het midden van de death star drukt, dit door `pointer-event: none;` te gebruiken. Zo kan je door een div heen klikken.
